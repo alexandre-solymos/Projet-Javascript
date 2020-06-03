@@ -1,0 +1,228 @@
+/*** LAYOUT ***/
+
+html, body, div, span, applet, object,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a,b, u, i, center, ol, ul, li,
+fieldset, form, label, legend,
+table,article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+    font-family: 'Open Sans';
+	vertical-align: baseline;
+}
+/* Reset CSS */
+article, aside, details, figcaption, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+    margin: 0;
+    padding: 0;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+.block-width   {
+    margin: 0 auto;
+    padding: 1.5em;
+ }
+
+ @media screen and (min-width: 740px) 
+ {
+ .block-width   {
+         max-width: 640px;
+         margin: 0 auto;
+         padding: 1.5em;
+      }   
+ }
+
+ 
+ @media screen and (min-width: 1024px) 
+{
+.block-width   {
+        max-width: 55rem;
+        margin: 0 auto;
+        padding: 1.5em;
+     }   
+}
+
+/* Premier block */
+
+.header-nav {
+    background: url("https://images.pexels.com/photos/3786120/pexels-photo-3786120.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+
+.include-logo-link {
+    display: flex;
+    align-items: center;
+
+}
+
+.div-header-logo {
+
+    font-weight: 600;
+    font-size: 1.5em;
+}
+.button-right-logo {
+    margin-left: auto;
+    color: #fff;
+    background-color: #000000;
+    padding: 0.8em;
+    border-radius: 5px;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+#section-one {
+    text-align: center;
+}
+
+#section-one h1 {
+    font-size: 2em;
+}
+
+#section-one p {
+    margin-top: 2em;
+}
+
+.button-contribute {
+    margin-top: 2em;
+
+}
+
+.button-contribute a {
+    background-color: #5cc72a;
+    color: #fff;
+    padding: 0.8em;
+    border-radius: 5px;
+    font-size: 15px;
+    font-weight: 600;
+}
+#div-block-text {
+    margin-top: 2em;
+    padding: 1.5em;
+    box-shadow: 0 8px 24px 0 rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    border-radius: 5px;
+    text-align: left;
+
+}
+
+
+#section-two {
+    min-height: 100vh;
+}
+
+.color-h2 {
+    text-align: center;
+    font-size:  1.5em;
+    margin-top: 2em;
+    margin-bottom: 2em;
+}
+
+.color-h2 span {
+    color : #5cc72a;
+}
+
+
+.div-flex {
+    display: flex;
+    text-align: center;
+}
+.div-left-flex, .div-right-flex {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.buttonhideopen {
+    margin-left: auto;
+    color: #fff;
+    background-color: #000000;
+    padding: 0.8em;
+    border-radius: 5px;
+    font-size: 15px;
+    font-weight: 600;
+    border: none;
+    margin-top: 3em;
+    cursor: pointer;
+}
+
+.card {
+    width: 230px;
+    height: 200px;
+    background: #fff;
+    display: inline-block;
+    margin: 20px;
+    text-align: center;
+    transition: 0.8s;
+    box-shadow: 7px 7px 15px rgba(55, 84, 170, 0.15),
+      -7px -7px 20px rgba(255, 255, 255, 1),
+      inset 0px 0px 4px rgba(255, 255, 255, 0.2),
+      inset 7px 7px 15px rgba(55, 84, 170, 0),
+      inset -7px -7px 20px rgba(255, 255, 255, 0),
+      0px 0px 4px rgba(255, 255, 255, 0);
+      transition: 0.8s;
+  }
+  
+  .block-one .card .stats {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  #number, #deathsnumber, #recoverednumber, #totalnumber, #totaldeaths, #totalrecovered {
+    font-size: 35px;
+    font-weight: 600;
+  }
+  .factor {
+    color: #a3a3a3;
+      height: 200px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+  
+  }
+  
+  #total {
+    border-bottom: 5px solid #d63031;
+  }
+  
+  #recover {
+    border-bottom: 5px solid #00b894;
+  }
+  
+  #sick {
+    border-bottom: 5px solid #0984e3; 
+  }
+  
+  #dead,  {
+    border-bottom: 5px solid red;  
+  }
