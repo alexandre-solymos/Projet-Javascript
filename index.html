@@ -73,6 +73,9 @@
     button.innerText = "Ouvrir / Fermer ";
     button.setAttribute('onclick','PopPupBlock()');
 
+    // Creation de la function popup
+    // Elle permet de faie en sorte que le button au dessus fonctionne 
+
 
     function PopPupBlock() {
     let popup = document.getElementById("div-block-text");
@@ -270,20 +273,37 @@
 
             // Nombre de cas par pays
             // Creation de boucle for pour afficher tous les pays ainsi que leurs données
-
-
             // For = Pays 
-            for (let i = 0 ; i < response.Countries.length; i++)
-            {
+
+            // Affiche dans la console 
+            for (let i = 0 ; i < response.Countries.length; i++){
             let name = response.Countries[i].Country;
             console.log(name);
-            
+
+            //  Afficher la liste des pays
+            let spanleft = document.createElement('span');
+            spanleft.setAttribute('id', 'span-left');
+            spanleft.innerText = name;
+    
+            divleftflex.appendChild(spanleft);
+    
             let nametwo = document.getElementById('span-left');
             nametwo.innerText = response.Countries[i].Country;
 
-            // For = nombre de cas total confirmé par pays
+            // 
+            // Nombre de cas total confirmé par pays
+            //
+
+            // Affiche dans la console 
             let confirmed = response.Countries[i].TotalConfirmed;
             console.log(confirmed);
+
+            //  Afficher les cas confirmer par pays
+            let spanright = document.createElement('span');
+            spanright.setAttribute('id', 'span-right');
+            spanright.innerText = confirmed ;
+
+            divrightflex.appendChild(spanright);
 
             let confirmedcase = document.getElementById('span-right');
             confirmedcase.innerText = response.Countries[i].TotalConfirmed;
@@ -341,15 +361,19 @@
 
     divleftflex.appendChild(textcountry);
 
-    for(let i = 0; i < 30; i++){
-
-    let spanleft = document.createElement('span');
-    spanleft.setAttribute('id', 'span-left');
 
     
-    divleftflex.appendChild(spanleft);
+      // Ceci sera exécuté 30 fois
+    // À chaque éxécution, la variable augmentera de 1
+    // Lorsque'elle sera arrivée à 30, le boucle se terminera.
 
-    }
+    // let spanleft = document.createElement('span');
+    // spanleft.setAttribute('id', 'span-left');
+    // spanleft.innerText = "";
+    
+    // divleftflex.appendChild(spanleft);
+
+    
 
 
     // Nombre total de cas par pays
@@ -357,15 +381,6 @@
     let texttotalcase = document.createElement('span');
     texttotalcase.innerText = "Total de cas";
     divrightflex.appendChild(texttotalcase);
-
-    for(let i = 0; i < 30; i++){
-    let spanright = document.createElement('span');
-    spanright.setAttribute('id', 'span-right');
-
-    divrightflex.appendChild(spanright);
-
-
-    }
 
  
 

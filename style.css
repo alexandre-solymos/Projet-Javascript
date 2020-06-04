@@ -226,3 +226,7 @@ a {
   #dead,  {
     border-bottom: 5px solid red;  
   }
+
+  #span-left, #span-right {
+      text-align: left;
+  }
