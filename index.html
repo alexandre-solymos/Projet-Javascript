@@ -283,9 +283,27 @@
             //  Afficher la liste des pays
             let spanleft = document.createElement('span');
             spanleft.setAttribute('id', 'span-left');
-            spanleft.innerText = name;
+
+            // Design pour pays    
+            let countrynameone = document.createElement('div');
+            countrynameone.setAttribute('id', 'recover');
+            countrynameone.setAttribute('class', 'card');
+
+            let countrynametwo = document.createElement('div');
+            countrynametwo.setAttribute('class', 'stats');
+
+            let countrynamethree = document.createElement('div');
+            countrynamethree.setAttribute('class', 'factor');
+
+            let countrynamefour = document.createElement('div');
+            countrynamefour.innerText = name;
     
             divleftflex.appendChild(spanleft);
+            spanleft.appendChild(countrynameone);
+            countrynameone.appendChild(countrynametwo);
+            countrynametwo.appendChild(countrynamethree);
+            countrynamethree.appendChild(countrynamefour);
+    
     
             let nametwo = document.getElementById('span-left');
             nametwo.innerText = response.Countries[i].Country;
@@ -299,14 +317,71 @@
             console.log(confirmed);
 
             //  Afficher les cas confirmer par pays
+            let spancenter = document.createElement('span');
+            spancenter.setAttribute('id', 'span-center');
+
+            // Design pour cas confirmer    
+            let casenameone = document.createElement('div');
+            casenameone.setAttribute('id', 'sick');
+            casenameone.setAttribute('class', 'card');
+
+            let casenametwo = document.createElement('div');
+            casenametwo.setAttribute('class', 'stats');
+
+            let casenamethree = document.createElement('div');
+            casenamethree.setAttribute('class', 'factor');
+
+            let casenamefour = document.createElement('div');
+            casenamefour.setAttribute('id', 'deathsnumber');
+            casenamefour.innerText = confirmed;
+    
+            divcenterflex.appendChild(spancenter);
+            spancenter.appendChild(casenameone);
+            casenameone.appendChild(casenametwo);
+            casenametwo.appendChild(casenamethree);
+            casenamethree.appendChild(casenamefour);
+            
+            let confirmedcase = document.getElementById('span-center');
+            confirmedcase.innerText = response.Countries[i].TotalConfirmed;
+
+            // 
+            // Nombre de décès total confirmé par pays
+            //
+
+            // Affiche dans la console 
+            let deadtotal = response.Countries[i].TotalDeaths;
+            console.log(deadtotal);
+
+            //  Afficher les cas confirmer par pays
             let spanright = document.createElement('span');
             spanright.setAttribute('id', 'span-right');
-            spanright.innerText = confirmed ;
 
+            // Design pour cas confirmer    
+            let deadnameone = document.createElement('div');
+            deadnameone.setAttribute('id', 'dead');
+            deadnameone.setAttribute('class', 'card');
+
+            let deadnametwo = document.createElement('div');
+            deadnametwo.setAttribute('class', 'stats');
+
+            let deadnamethree = document.createElement('div');
+            deadnamethree.setAttribute('class', 'factor');
+
+            let deadnamefour = document.createElement('div');
+            deadnamefour.setAttribute('id', 'deathsnumber');
+            deadnamefour.innerText = deadtotal;
+    
             divrightflex.appendChild(spanright);
+            spanright.appendChild(deadnameone);
+            deadnameone.appendChild(deadnametwo);
+            deadnametwo.appendChild(deadnamethree);
+            deadnamethree.appendChild(deadnamefour);
 
-            let confirmedcase = document.getElementById('span-right');
-            confirmedcase.innerText = response.Countries[i].TotalConfirmed;
+
+            let confirmeddead = document.getElementById('span-right');
+            confirmeddead.innerText = response.Countries[i].TotalDeaths;
+
+            
             }
         })
          // Erreur dans la console
@@ -344,6 +419,9 @@
     let divleftflex = document.createElement('div');
     divleftflex.setAttribute('class', 'div-left-flex');
 
+    let divcenterflex = document.createElement('div');
+    divcenterflex.setAttribute('class', 'div-center-flex');
+
     let divrightflex = document.createElement('div');
     divrightflex.setAttribute('class', 'div-right-flex');
 
@@ -351,6 +429,7 @@
     h2one.appendChild(spanH2);
     SectionTwo.appendChild(divflex);
     divflex.appendChild(divleftflex);
+    divflex.appendChild(divcenterflex);
     divflex.appendChild(divrightflex);
 
 
@@ -358,29 +437,17 @@
 
     let textcountry = document.createElement('span');
     textcountry.innerText = "Pays";
-
     divleftflex.appendChild(textcountry);
-
-
-    
-      // Ceci sera exécuté 30 fois
-    // À chaque éxécution, la variable augmentera de 1
-    // Lorsque'elle sera arrivée à 30, le boucle se terminera.
-
-    // let spanleft = document.createElement('span');
-    // spanleft.setAttribute('id', 'span-left');
-    // spanleft.innerText = "";
-    
-    // divleftflex.appendChild(spanleft);
-
-    
-
 
     // Nombre total de cas par pays
 
     let texttotalcase = document.createElement('span');
     texttotalcase.innerText = "Total de cas";
-    divrightflex.appendChild(texttotalcase);
+    divcenterflex.appendChild(texttotalcase);
+
+    let texttotaldead = document.createElement('span');
+    texttotaldead.innerText = "Total de décès";
+    divrightflex.appendChild(texttotaldead);
 
  
 
