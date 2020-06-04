@@ -236,13 +236,16 @@
     recoveredstatstotal.appendChild(recoveredtotalnumber);
     recoveredtotalnumber.appendChild(totalrecovered);
 
+        // Connexion à l'API
+
     
-    
- fetch("https://api.jsonbin.io/b/5ed8b38c1f9e4e5788171465")
+    fetch("https://api.jsonbin.io/b/5ed8b38c1f9e4e5788171465")
         .then(response => response.json())
         .then((response) => {
             // Code éxécuté quand vous recevez la réponse
             console.log(response);
+
+            // Nombre de cas, décès guéries aujourd'hui
 
             let divone = document.getElementById('number');
             divone.innerHTML = response.Global.NewConfirmed ;
@@ -253,6 +256,7 @@
             let divthree = document.getElementById('recoverednumber');
             divthree.innerText = response.Global.NewRecovered;
 
+            // Nombre de cas total
 
             let divfour = document.getElementById('totalnumber');
             divfour.innerHTML = response.Global.TotalConfirmed ;
@@ -263,6 +267,12 @@
             let divsix = document.getElementById('totalrecovered');
             divsix.innerText = response.Global.TotalRecovered;
 
+
+            // Nombre de cas par pays
+            // Creation de boucle for pour afficher tous les pays ainsi que leurs données
+
+
+            // For = Pays 
             for (let i = 0 ; i < response.Countries.length; i++)
             {
             let name = response.Countries[i].Country;
@@ -271,11 +281,12 @@
             let nametwo = document.getElementById('span-left');
             nametwo.innerText = response.Countries[i].Country;
 
-            let confirmed = response.Countries[i].NewConfirmed;
+            // For = nombre de cas total confirmé par pays
+            let confirmed = response.Countries[i].TotalConfirmed;
             console.log(confirmed);
 
             let confirmedcase = document.getElementById('span-right');
-            confirmedcase.innerText = response.Countries[i].NewConfirmed;
+            confirmedcase.innerText = response.Countries[i].TotalConfirmed;
             }
         })
         .catch(error => console.error(error));
@@ -321,14 +332,30 @@
     divflex.appendChild(divleftflex);
     divflex.appendChild(divrightflex);
 
+
+    // Liste des pays
+
+    let textcountry = document.createElement('span');
+    textcountry.innerText = "Pays";
+
+    divleftflex.appendChild(textcountry);
+
     for(let i = 0; i < 30; i++){
 
     let spanleft = document.createElement('span');
     spanleft.setAttribute('id', 'span-left');
 
+    
     divleftflex.appendChild(spanleft);
 
     }
+
+
+    // Nombre total de cas par pays
+
+    let texttotalcase = document.createElement('span');
+    texttotalcase.innerText = "Total de cas";
+    divrightflex.appendChild(texttotalcase);
 
     for(let i = 0; i < 30; i++){
     let spanright = document.createElement('span');
