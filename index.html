@@ -11,17 +11,6 @@
   
     <script type="text/javascript">
 
-  
- fetch("https://api.covid19api.com/")
-        .then(response => response.json())
-        .then((response) => {
-            // Code éxécuté quand vous recevez la réponse
-            console.log(response);
-        })
-        .catch(error => alert("Erreur : " + error));
-       
-    
-
     // creation du header
     let mainbackground = document.createElement('main');
     mainbackground.setAttribute('class', 'header-nav');
@@ -60,7 +49,7 @@
     SectionOne.setAttribute('class', 'block-width');
 
     let h1one = document.createElement('h1');
-    h1one.innerText = "Statistique du Covid ";
+    h1one.innerText = "Statistique du Covid dans le monde ";
 
     let paragrapheone = document.createElement('p');
     paragrapheone.innerText = "Données collectées à partir de l' API Covid19API";
@@ -276,7 +265,7 @@
 
 
         })
-        .catch(error => alert("Erreur : " + error));
+        .catch(error => console.error(error));
        
      
 
@@ -319,24 +308,20 @@
     divflex.appendChild(divleftflex);
     divflex.appendChild(divrightflex);
 
-    for(let i = 0; i < 3; i++){
     let spanleft = document.createElement('span');
     spanleft.setAttribute('class', 'span-left');
-    spanleft.innerText = "Dead Simple ";
+    spanleft.innerText = "France ";
 
     divleftflex.appendChild(spanleft);
 
-    }
-
     
-    for(let i = 0; i < 3; i++){
     let spanright = document.createElement('span');
     spanright.setAttribute('class', 'span-left');
-    spanright.innerText = "Highly Intuitive ";
+    spanright.innerText = "Espagne ";
 
     divrightflex.appendChild(spanright);
 
-    }
+
  
 
     // ici on affiche toutes les balises créer
