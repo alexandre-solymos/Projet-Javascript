@@ -61,6 +61,7 @@
     let linkcontribute = document.createElement('a');
     linkcontribute.setAttribute('href', 'https://github.com/alexandre427/Projet-Javascript');
     linkcontribute.setAttribute('title', 'Contribuer');
+    linkcontribute.setAttribute('target', '_blank');
     linkcontribute.innerText = "Contribuer au projet";
 
     let DivBockText = document.createElement('div');
@@ -90,7 +91,7 @@
     blocknumber.setAttribute('id', 'block-one');
     
 
-    // Covid Nouveau cas
+    // Covid Nouveaux cas
 
     let cardnumber = document.createElement('div');
     cardnumber.setAttribute('id', 'total');
@@ -114,7 +115,7 @@
     statnumber.appendChild(factornumber);
     factornumber.appendChild(number);
 
-    // Covid Nouveau décès
+    // Covid Nouveaux décès
 
     let deathsnumber = document.createElement('div');
     deathsnumber.setAttribute('id', 'deaths');
@@ -136,7 +137,7 @@
     statsnumber.appendChild(deathsnumb);
     deathsnumb.appendChild(deaths);
 
-    // Covid Nouveau guerie
+    // Covid Nouveaux gueries
 
     let recovernumber = document.createElement('div');
     recovernumber.setAttribute('id', 'sick');
@@ -236,9 +237,8 @@
     recoveredstatstotal.appendChild(recoveredtotalnumber);
     recoveredtotalnumber.appendChild(totalrecovered);
 
-        // Connexion à l'API
+    // Connexion à l'API
 
-    
     fetch("https://api.jsonbin.io/b/5ed8b38c1f9e4e5788171465")
         .then(response => response.json())
         .then((response) => {
@@ -289,6 +289,7 @@
             confirmedcase.innerText = response.Countries[i].TotalConfirmed;
             }
         })
+         // Erreur dans la console
         .catch(error => console.error(error));
        
      
