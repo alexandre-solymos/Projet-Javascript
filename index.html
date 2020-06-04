@@ -47,7 +47,7 @@
 
     // le header comprend la div
     mainbackground.appendChild(header);
-    header.appendChild(divbeforeone);
+    header.appendChild(divbeforeone);     
     divbeforeone.appendChild(divone);
     divbeforeone.appendChild(linkbutton);
 
@@ -80,7 +80,7 @@
 
     let button = document.createElement('button');
     button.setAttribute('class', 'buttonhideopen');
-    button.innerText = "Hide / Open ";
+    button.innerText = "Ouvrir / Fermer ";
     button.setAttribute('onclick','PopPupBlock()');
 
 
@@ -112,7 +112,7 @@
 
     let factornumber = document.createElement('div');
     factornumber.setAttribute('class', 'factor');
-    factornumber.innerText = "Nouveau cas";
+    factornumber.innerText = "Nouveaux cas";
 
     let number = document.createElement('div');
     number.setAttribute('id', 'number');
@@ -136,7 +136,7 @@
 
     let deathsnumb = document.createElement('div');
     deathsnumb.setAttribute('class', 'factor');
-    deathsnumb.innerText = "Nouveau Décès";
+    deathsnumb.innerText = "Nouveaux Décès";
 
     let deaths = document.createElement('div');
     deaths.setAttribute('id', 'deathsnumber');
@@ -299,7 +299,7 @@
 
     let h2one = document.createElement('h2');
     h2one.setAttribute('class', 'color-h2');
-    h2one.innerText = "Statistique par";
+    h2one.innerText = "Statistique par ";
 
     let spanH2 = document.createElement('span');
     spanH2.innerText = "Pays";
