@@ -238,7 +238,7 @@
 
     
     
- fetch("https://api.covid19api.com/summary")
+ fetch("https://api.jsonbin.io/b/5ed8b38c1f9e4e5788171465")
         .then(response => response.json())
         .then((response) => {
             // Code éxécuté quand vous recevez la réponse
@@ -263,7 +263,20 @@
             let divsix = document.getElementById('totalrecovered');
             divsix.innerText = response.Global.TotalRecovered;
 
+            for (let i = 0 ; i < response.Countries.length; i++)
+            {
+            let name = response.Countries[i].Country;
+            console.log(name);
+            
+            let nametwo = document.getElementById('span-left');
+            nametwo.innerText = response.Countries[i].Country;
 
+            let confirmed = response.Countries[i].NewConfirmed;
+            console.log(confirmed);
+
+            let confirmedcase = document.getElementById('span-right');
+            confirmedcase.innerText = response.Countries[i].NewConfirmed;
+            }
         })
         .catch(error => console.error(error));
        
@@ -308,19 +321,23 @@
     divflex.appendChild(divleftflex);
     divflex.appendChild(divrightflex);
 
+    for(let i = 0; i < 30; i++){
+
     let spanleft = document.createElement('span');
-    spanleft.setAttribute('class', 'span-left');
-    spanleft.innerText = "France ";
+    spanleft.setAttribute('id', 'span-left');
 
     divleftflex.appendChild(spanleft);
 
-    
+    }
+
+    for(let i = 0; i < 30; i++){
     let spanright = document.createElement('span');
-    spanright.setAttribute('class', 'span-left');
-    spanright.innerText = "Espagne ";
+    spanright.setAttribute('id', 'span-right');
 
     divrightflex.appendChild(spanright);
 
+
+    }
 
  
 
